@@ -30,4 +30,4 @@ foreach ($customer in $customers) {
     }
      
     Remove-PSSession $Session
-}
+} 
