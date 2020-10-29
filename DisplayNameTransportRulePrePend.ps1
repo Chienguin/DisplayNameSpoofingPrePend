@@ -15,7 +15,7 @@ foreach ($customer in $customers) {
     $Session = New-PSSession -ConnectionUri $DelegatedOrgURL -Credential $Cred -Authentication Basic -ConfigurationName Microsoft.Exchange -AllowRedirection
     Import-PSSession $Session -CommandName Get-Mailbox, Get-TransportRule, New-TransportRule, Set-TransportRule -AllowClobber
       
-    $rule = Get-TransportRule | Where-Object {$_.Identity -contains $ruleName}
+    $rule = Get-TransportRule | Where-Object {$_.Idetity -contains $ruleName}
     $displayNames = (Get-Mailbox -ResultSize Unlimited).DisplayName
      
     if (!$rule) {
